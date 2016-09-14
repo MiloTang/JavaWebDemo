@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.0"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+
+	<servlet>
+		<servlet-name>JavaWebDemo</servlet-name>
+		<servlet-class>com.tnoob.java.JavaWebDemo</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CheckBox</servlet-name>
+		<servlet-class>com.tnoob.java.CheckBox</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>DisplayHeader</servlet-name>
+		<servlet-class>com.tnoob.java.DisplayHeader</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Refresh</servlet-name>
+		<servlet-class>com.tnoob.java.Refresh</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JavaWebDemo</servlet-name>
+		<url-pattern>/JavaWebDemo</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CheckBox</servlet-name>
+		<url-pattern>/box</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>DisplayHeader</servlet-name>
+		<url-pattern>/header</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Refresh</servlet-name>
+		<url-pattern>/refresh</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	        <servlet-name>MyCookie</servlet-name>
+	        <servlet-class>com.tnoob.java.MyCookie</servlet-class>
+	</servlet>	
+	<servlet-mapping>
+	        <servlet-name>MyCookie</servlet-name>
+	        <url-pattern>/cookie</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	        <servlet-name>ReadCookie</servlet-name>
+	        <servlet-class>com.tnoob.java.ReadCookie</servlet-class>
+	</servlet>	
+	<servlet-mapping>
+	        <servlet-name>ReadCookie</servlet-name>
+	        <url-pattern>/read/cookie</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	        <servlet-name>SessionTrack</servlet-name>
+	        <servlet-class>com.tnoob.java.SessionTrack</servlet-class>
+	</servlet>	
+	<servlet-mapping>
+	        <servlet-name>SessionTrack</servlet-name>
+	        <url-pattern>/session</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DatabaseAccess</servlet-name>
+		<servlet-class>com.tnoob.java.DatabaseAccess</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DatabaseAccess</servlet-name>
+		<url-pattern>/database</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UploadFile</servlet-name>
+		<servlet-class>com.tnoob.java.UploadFile</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadFile</servlet-name>
+		<url-pattern>/uploadfile</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	        <servlet-name>ErrorHandler</servlet-name>
+	        <servlet-class>ErrorHandler</servlet-class>
+	</servlet>	
+	<servlet-mapping>
+	        <servlet-name>ErrorHandler</servlet-name>
+	        <url-pattern>/handler</url-pattern>
+	</servlet-mapping>
+	<error-page>
+	    <error-code>404</error-code>
+	    <location>/ErrorHandler</location>
+	</error-page>
+	<error-page>
+	    <error-code>403</error-code>
+	    <location>/ErrorHandler</location>
+	</error-page>	
+	<error-page>
+	    <exception-type>
+	          javax.servlet.ServletException
+	    </exception-type >
+	    <location>/ErrorHandler</location>
+	</error-page>
+	<error-page>
+	    <exception-type>java.io.IOException</exception-type >
+	    <location>/ErrorHandler</location>
+	</error-page>
+
+	<filter>
+		<filter-name>MyFilter</filter-name>
+		<filter-class>com.tnoob.java.MyFilter</filter-class>
+		<init-param>
+			<param-name>MyFilter</param-name>
+			<param-value>技术菜鸟</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>AuthenFilter</filter-name>
+		<filter-class>com.tnoob.java.AuthenFilter</filter-class>
+		<init-param>
+			<param-name>AuthenFilter</param-name>
+			<param-value>AuthenFilter</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>MyFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>AuthenFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+</web-app>

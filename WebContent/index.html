@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Get Post 实例</title>
+</head>
+<body>
+
+get demo
+<hr>
+<form action="JavaWeb3" method="GET">
+姓：<input type="text" name="first_name">
+<br />
+名：<input type="text" name="last_name" />
+<input type="submit" value="提交" />
+</form>
+<br>
+<form action="CheckBox" method="Get" target="_blank">
+<input type="checkbox" name="maths" checked="checked" /> 数学
+<input type="checkbox" name="physics"  /> 物理
+<input type="checkbox" name="chemistry" checked="checked" /> 化学
+<input type="checkbox" name="chinese" checked="checked" /> 语文
+<input type="checkbox" name="history" checked="checked" /> 历史
+<input type="submit" value="选择学科" />
+</form>
+<br>
+post demo
+<hr>
+<form action="JavaWeb3" method="Post">
+姓：<input type="text" name="first_name">
+<br />
+名：<input type="text" name="last_name" />
+<input type="submit" value="提交" />
+</form>
+<br>
+<form action="CheckBox" method="POST" target="_blank">
+<input type="checkbox" name="runoob" checked="checked" /> tnoob
+<input type="checkbox" name="google"  /> Google
+<input type="checkbox" name="taobao" checked="checked" /> 淘宝
+<input type="submit" value="选择站点" />
+</form>
+<br>
+<a href="header">head 参数</a>
+<br>
+<a href="refresh">刷新</a>
+<br>
+<a href="read/cookie">读取cookie</a>
+<br>
+<a href="Session">Session</a>
+<br>
+<a href="Database">Database</a>
+<hr>
+Cookie测试
+<br>
+<form action="cookie" method="GET">
+站点名 ：<input type="text" name="name">
+<br />
+站点 URL：<input type="text" name="url" /><br>
+<input type="submit" value="提交" />
+</form>
+<hr>
+<h1>文件上传实例</h1>
+<form method="post" action="upload" enctype="multipart/form-data">
+	选择一个文件:
+	<input type="file" name="uploadFile" value="文件选择" />
+	<br/><br/>
+	<input type="submit" value="上传" />
+</form>
+
+<hr>
+问题记录
+<hr>
+post get到Servlet会乱码，解决方式直接将tomcat的server文件修改为	
+Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443" URIEncoding="UTF-8"/
+<hr>
+运行的时候发现了java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+这个倒霉玩艺原因就是执行的时候原来是tomcat找不到MYSQL JAR包，所以需要将这个包倒入tomcat的lib里面，然后重起
+所以当加入第三方包的时候可能会引发tomcat启动不成功，先把包拷贝进去看看情况先
+</body>
+</html>
